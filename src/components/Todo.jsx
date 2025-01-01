@@ -26,6 +26,17 @@ const Todo = () => {
     });
   };
 
+  const toggle = (id) => {
+    setTodoList((prev) => {
+      return prev.map((item) => {
+        if (item.id === id) {
+          return { ...item, isComplete: !item.isComplete };
+        }
+        return item;
+      });
+    });
+  };
+
   return (
     <div className="bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl">
       {/* -------Title----- */}
@@ -59,6 +70,7 @@ const Todo = () => {
               id={item.id}
               isComplete={item.isComplete}
               deleteTodo={deleteTodo}
+              toggle={toggle}
             />
           );
         })}
