@@ -18,7 +18,12 @@ const Todo = () => {
     };
     setTodoList((prev) => [...prev, newTodo]);
     inputRef.current.value = "";
-    console.log(todoList);
+  };
+
+  const deleteTodo = (id) => {
+    setTodoList((prev) => {
+      return prev.filter((item) => item.id !== id);
+    });
   };
 
   return (
@@ -53,6 +58,7 @@ const Todo = () => {
               text={item.text}
               id={item.id}
               isComplete={item.isComplete}
+              deleteTodo={deleteTodo}
             />
           );
         })}
