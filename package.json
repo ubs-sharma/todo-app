@@ -2,7 +2,7 @@
   "name": "todo-app",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://ubs-sharma.github.io/todo-app",
+  "homepage": "https://ubs-sharma.github.io/todo-app/",
   "type": "module",
   "scripts": {
     "dev": "vite",
